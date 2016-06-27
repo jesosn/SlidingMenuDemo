@@ -2,29 +2,31 @@ package imdemo.bmob.cn.myapplication;
 
 import android.app.Activity;
 import android.graphics.Color;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
+import com.jeremyfeinstein.slidingmenu.lib.app.SlidingActivity;
 
-public class MainActivity extends Activity {
+public class MainActivity2 extends SlidingActivity {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        setBehindContentView(R.layout.menu_layout);
         //创建侧滑菜单
-        SlidingMenu menu = new SlidingMenu(this);
+//        SlidingMenu menu = new SlidingMenu(this);
+        SlidingMenu menu = getSlidingMenu();
         menu.setMode(SlidingMenu.LEFT);
         menu.setTouchModeAbove(SlidingMenu.TOUCHMODE_FULLSCREEN);
         menu.setFadeDegree(0.55f);
-        menu.setMenu(R.layout.menu_layout);
+//        menu.setMenu(R.layout.menu_layout);
         menu.setBackgroundColor(Color.LTGRAY);
         menu.setBehindScrollScale(1.0f);
         menu.setBehindOffset(50);
-        menu.attachToActivity(this,SlidingMenu.SLIDING_CONTENT);
+//        menu.attachToActivity(this,SlidingMenu.SLIDING_CONTENT);
     }
 
     @Override
